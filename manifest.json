@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+  "name": "Kijiji RePoStEr",
+  "version": "1.0",
+
+  "default_locale": "en",
+  "description": "This extension will allow you to repost your Kijiji ad quickly",
+  "background": {
+      "scripts": ["popup.js"],
+      "persistent": false
+  },
+  
+  "icons": {},
+
+  "page_action": {},
+
+
+  "content_scripts": {
+
+  },
+
+  "permissions": [
+    "activeTab",
+    "http://www.kijiji.ca/*"
+  ]
+}
