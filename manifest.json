@@ -5,18 +5,23 @@
 
   "default_locale": "en",
   "description": "This extension will allow you to repost your Kijiji ad quickly",
+
+
+  "content_scripts": [
+      {
+          "matches": [
+              "https://www.kijiji.ca/m-my-ads.html"
+          ],
+          "js": [
+              "content.js",
+              "underscore-min.js"
+          ]
+      }
+  ],
+
   "background": {
-      "scripts": ["popup.js"],
+      "scripts": ["background.js"],
       "persistent": false
-  },
-  
-  "icons": {},
-
-  "page_action": {},
-
-
-  "content_scripts": {
-
   },
 
   "permissions": [
