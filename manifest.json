@@ -5,16 +5,10 @@
 
   "description": "This extension will allow you to repost your Kijiji ad quickly",
 
-
   "content_scripts": [
       {
-          "matches": [
-              "https://www.kijiji.ca/m-my-ads.html"
-          ],
-          "js": [
-              "content.js",
-              "underscore-min.js"
-          ]
+          "matches": [ "https://www.kijiji.ca/m-my-ads.html" ],
+          "js": [ "content.js" ]
       }
   ],
 

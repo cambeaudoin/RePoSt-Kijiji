@@ -28,7 +28,7 @@
 //     }
 // });
 
-var clickDelete = function () {
+var deleteOldAd = function () {
     link.click();
     var survey = document.getElementById("DeleteSurveyOK");
     survey.click();
@@ -39,21 +39,19 @@ var links = document.getElementsByTagName("a");
 Array.prototype.forEach.call(links, function (link, index) {
 
     if (link.id && link.id.indexOf("delete-ad-") === 0) {
-        // console.log(link, link.className, );
 
+        var adId = link.id.slice(10),
+        repost = document.createElement("a");
 
-        var repost = document.createElement("a");
         repost.className = link.className;
         repost.href = "";
         repost.appendChild(document.createTextNode("RePoSt Ad"));
-        repost.addEventListener("click", function () {
-            
-            // clickDelete();
-        }, false);
-
-        // var adId = link.id.slice(10);
-        // repost.id = adId;
+        repost.id = adId;
 
         link.parentNode.appendChild(repost);
+        repost.addEventListener("click", function () {
+            copyOldAd(id);
+            // deleteOldAd();
+        }, false);
     }
 })
