@@ -8,7 +8,7 @@
   "content_scripts": [
       {
           "matches": [ "https://www.kijiji.ca/m-my-ads.html" ],
-          "js": [ "content.js" ]
+          "js": [ "content.js", "underscore-min.js" ]
       }
   ],
 
