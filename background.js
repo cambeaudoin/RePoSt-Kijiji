@@ -6,6 +6,7 @@ chrome.runtime.onMessage.addListener(
         xhr.onreadystatechange = function () {
             if (xhr.readyState == 4 && xhr.status == 200) {
                 sendResponse(xhr.responseText);
+                console.log(xhr.responseText);
             }
         }
         xhr.send();

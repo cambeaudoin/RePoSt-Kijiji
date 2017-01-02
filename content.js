@@ -4,6 +4,8 @@ var deleteOldAd = function () {
     survey.click();
 };
 
+var newAd = {};
+
 var copyOldAd = function (id) {
     var request = {};
     request.url = "https://www.kijiji.ca/v-view-details.html?requestSource=b&adId=" + id;
@@ -16,15 +18,15 @@ var copyOldAd = function (id) {
         Array.prototype.forEach.call(itemprops, function(item) {
             if (item.hasAttribute('itemprop')) {
                 
-                console.log(item.getAttribute('itemprop'));
-                console.log(item);
+                var itemprop = item.getAttribute('itemprop');
+                // category is complex, get it from the landing page (where you put the link to repost)
+
+                if (itemprop === 'name') { // Ad Title
+                    newAd.title = item.textContent;
+                }
             }
         })
-        console.log();
-
-        var newAd = {};
-        newAd.title = el.getElementsByTagName( 'h1' );
-
+        
     });
 };
 
